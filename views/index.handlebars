@@ -30,11 +30,14 @@
     </div>
   </div>
 
-  <div class="jumbotron pie-refill" hidden>
+{{#if pieList}}
+{{else}}
+  <div class="jumbotron pie-refill">
     <p class="lead">
       <button class="btn btn-primary btn-lg" role="button">Refill the Pie Supply</button>
     </p>
   </div>
+{{/if}}
 
 </div>
 
