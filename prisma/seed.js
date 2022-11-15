@@ -5,19 +5,19 @@ const prisma = new PrismaClient();
 const pieData = [
     {
         name: "Blueberry",
-        imageUrl: "public/img/blueberry-pie.png"
+        imageUrl: "/images/blueberry-pie.png"
     },
     {
         name: "Apple",
-        imageUrl: "public/img/apple-pie.png"
+        imageUrl: "/images/apple-pie.png"
     },
     {
         name: "Banana Cream",
-        imageUrl: "public/img/banana-cream-pie.png"
+        imageUrl: "/images/banana-cream-pie.png"
     },
     {
         name: "Cherry",
-        imageUrl: "public/img/cherry-pie.png"
+        imageUrl: "/images/cherry-pie.png"
     },
 ];
 
