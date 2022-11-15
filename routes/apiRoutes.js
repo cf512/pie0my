@@ -1,24 +1,64 @@
-var db = require("../models");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
+const pieData = require("../prisma/seed.js");
 
 module.exports = function(app) {
-    // Get all examples
-    app.get("/api/examples", function(req, res) {
-        db.Example.findAll({}).then(function(dbExamples) {
-            res.json(dbExamples);
-        });
+
+    app.get("/feed", async (req, res) => {
+        const pies = await prisma.pie.findMany({});
+        res.json(pies);
     });
 
-    // Create a new example
-    app.post("/api/examples", function(req, res) {
-        db.Example.create(req.body).then(function(dbExample) {
-            res.json(dbExample);
-        });
+    app.get("/pies/refill", async (req, res) => {
+        const pies = await prisma.pie.findMany({});
+
+        switch (pies.length) {
+        case 4:
+        case 3:
+        case 2:
+        case 1:
+            res.send(false);
+            break;
+        case 0:
+            console.log("Start seeding ...");
+            for (const p of pieData) {
+                const pie = await prisma.pie.create({
+                    data: p,
+                });
+                console.log(`Created pie with id: ${pie.id}`);
+            }
+            console.log("Seeding finished.");
+            res.send(true);
+            break;
+        }
     });
 
-    // Delete an example by id
-    app.delete("/api/examples/:id", function(req, res) {
-        db.Example.destroy({ where: { id: req.params.id } }).then(function(dbExample) {
-            res.json(dbExample);
+    app.post("/post", async (req, res) => {
+        const { name, imageUrl } = req.body;
+        const pie = await prisma.pie.create({
+            data: {
+                name,
+                imageUrl
+            },
         });
+        res.json(pie);
     });
+
+    app.put("/update/:id", async (req, res) => {
+        const id = parseInt(req.params.id);
+        const pie = await prisma.pie.update({
+            where: { id: id },
+            data: {imageUrl: req.body.imageUrl},
+        });
+        res.json(pie);
+    });
+
+    app.delete("/pie/:id", async (req, res) => {
+        const id = parseInt(req.params.id);
+        const pie = await prisma.pie.delete({
+            where: { id: id }
+        });
+        res.json(pie);
+    });
+
 };
