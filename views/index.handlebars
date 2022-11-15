@@ -18,6 +18,7 @@
         <tbody>
           {{#each pieList}}
             <tr>
+              <td id="pie-d" hidden>{{this.id}}</td>
               <td>{{this.name}}<br><img src="{{domainUrl}}{{this.imageUrl}}"></img></td>
               <tr>
                 <td><button type="button" class="btn btn-sm btn-info pie-eat">Click to eat this {{this.name}} Pie</button></td>
