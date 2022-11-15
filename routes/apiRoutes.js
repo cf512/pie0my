@@ -29,11 +29,9 @@ module.exports = function(app) {
     });
 
     app.delete("/pie/:id", async (req, res) => {
-        const { id } = req.params;
+        const id = parseInt(req.params.id);
         const pie = await prisma.pie.delete({
-            where: {
-                id,
-            },
+            where: { id: id }
         });
         res.json(pie);
     });
