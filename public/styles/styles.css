@@ -8,6 +8,8 @@ body {
 
 .footer {
   text-align: center;
+  margin-top:10px;
+  margin-bottom:20px;
 }
 
 .githubIcon {
@@ -33,6 +35,8 @@ h1, h2 {
 
 .pie-refill {
   text-align: center;
+  border-bottom: 1px darkgray solid;
+  padding-bottom: 15px;
 }
 
 .pie-table {

@@ -13,12 +13,6 @@ module.exports = function(app) {
         const pies = await prisma.pie.findMany({});
 
         switch (pies.length) {
-        case 4:
-        case 3:
-        case 2:
-        case 1:
-            res.send(false);
-            break;
         case 0:
             console.log("Start seeding ...");
             for (const p of pieData) {
@@ -29,6 +23,9 @@ module.exports = function(app) {
             }
             console.log("Seeding finished.");
             res.send(true);
+            break;
+        default:
+            res.send(false);
             break;
         }
     });
