@@ -1,3 +1,31 @@
 .list-group-item {
   line-height: 2.5;
 }
+
+body {
+  background-color: lightcyan;
+}
+
+.footer {
+  text-align: center;
+}
+
+.main {
+  margin-top: 15px;
+}
+
+h1, h2 {
+  text-align: center;
+}
+
+.pie-nav-border {
+  border-bottom: darkgray 1px solid;
+}
+
+.pie-refill {
+  text-align: center;
+}
+
+.pie-table {
+  text-align: center;
+}
