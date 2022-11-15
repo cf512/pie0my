@@ -1,2 +1,0 @@
--- AlterTable
-ALTER TABLE `Pie` ADD COLUMN `imageUrl` VARCHAR(191) NULL;
