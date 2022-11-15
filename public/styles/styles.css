@@ -10,6 +10,15 @@ body {
   text-align: center;
 }
 
+.githubIcon {
+  color:black; 
+}
+
+.icon-padding {
+  margin-top:8px;
+  margin-bottom:8px;
+}
+
 .main {
   margin-top: 15px;
 }
