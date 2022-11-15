@@ -15,6 +15,16 @@ app.engine(
     "handlebars",
     exphbs.engine({
         defaultLayout: "main",
+        helpers: {
+            domainUrl: function (){
+                return process.env.DOMAIN_URL;
+            },
+            year: function now() {
+                const d = new Date();
+                let year = d.getFullYear();
+                return year;
+            }
+        }
     })
 );
 app.set("view engine", "handlebars");
