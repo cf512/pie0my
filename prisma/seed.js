@@ -1,7 +1,3 @@
-const { PrismaClient } = require("@prisma/client");
-
-const prisma = new PrismaClient();
-
 const pieData = [
     {
         name: "Blueberry",
@@ -21,23 +17,4 @@ const pieData = [
     },
 ];
 
-async function main() {
-    console.log("Start seeding ...");
-    for (const p of pieData) {
-        const pie = await prisma.pie.create({
-            data: p,
-        });
-        console.log(`Created pie with id: ${pie.id}`);
-    }
-    console.log("Seeding finished.");
-}
-
-main()
-    .then(async () => {
-        await prisma.$disconnect();
-    })
-    .catch(async (e) => {
-        console.error(e);
-        await prisma.$disconnect();
-        process.exit(1);
-    });
+module.exports = pieData;
