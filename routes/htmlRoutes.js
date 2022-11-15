@@ -1,13 +1,12 @@
-var db = require("../models");
+const { PrismaClient } = require("@prisma/client");
+const prisma = new PrismaClient();
 
 module.exports = function(app) {
-    // Load index page
-    app.get("/", function(req, res) {
-        db.Example.findAll({}).then(function(dbExamples) {
-            res.render("index", {
-                msg: "Welcome!",
-                examples: dbExamples
-            });
+    app.get("/", async function(req, res) {
+        const dbPies = await prisma.pie.findMany({});
+        res.render("index", {
+            msg: "Welcome!",
+            pieList: dbPies
         });
     });
 
