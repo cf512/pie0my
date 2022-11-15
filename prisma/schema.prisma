@@ -1,0 +1,15 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL_DEV")
+}
+
+// Define the `User` table in the database
+model Pie {
+  id    Int     @default(autoincrement()) @id
+  name  String?
+  imageUrl  String?
+}
