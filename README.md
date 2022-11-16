@@ -2,11 +2,11 @@
 
 https://pie0my.herokuapp.com/
 
-A super simple pie-eating webapp that uses:
+A super simple pie-eating webapp built with:
 
 * Nodejs
-* MySQL
 * Prisma ORM
+* MySQL
 * Handlebarsjs
 * Express
 * Bootstrap
