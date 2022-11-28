@@ -5,10 +5,11 @@ https://pie0my.herokuapp.com/
 A super simple pie-eating webapp built with:
 
 * Nodejs
+* TypeScript
 * Prisma ORM
 * MySQL
-* Handlebarsjs
 * Express
+* Handlebarsjs
 * Bootstrap
 * FontAwesome
 * jQuery
