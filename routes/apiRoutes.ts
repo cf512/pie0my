@@ -1,15 +1,15 @@
-const { PrismaClient } = require("@prisma/client");
+import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 const pieData = require("../prisma/seed.js");
 
-module.exports = function(app) {
+module.exports = function(app: any) {
 
-    app.get("/pies/all", async (req, res) => {
+    app.get("/pies/all", async (req: any, res: any) => {
         const pies = await prisma.pie.findMany({}).catch(err => err);
         res.json(pies);
     });
 
-    app.get("/pies/refill", async (req, res) => {
+    app.get("/pies/refill", async (req: any, res: any) => {
         const pies = await prisma.pie.findMany({}).catch(err => err);
 
         switch (pies.length) {
@@ -30,7 +30,7 @@ module.exports = function(app) {
         }
     });
 
-    app.delete("/pie/:id", async (req, res) => {
+    app.delete("/pie/:id", async (req: any, res: any) => {
         const id = parseInt(req.params.id);
         const pie = await prisma.pie.delete({
             where: { id: id }
