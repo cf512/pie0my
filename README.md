@@ -11,3 +11,4 @@ A super simple pie-eating webapp built with:
 * Express
 * Bootstrap
 * FontAwesome
+* jQuery
