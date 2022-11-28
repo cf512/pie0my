@@ -4,7 +4,8 @@
   "description": "node-handlebars-boilerplate",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js",
+    "build": "tsc",
+    "start": "ts-node server.ts",
     "lint": "eslint \"**/*.js\"",
     "fix": "eslint --fix .",
     "test": "npm run lint"
@@ -15,13 +16,16 @@
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
     "express-handlebars": "^6.0.6",
-    "mysql2": "^2.3.3"
+    "mysql2": "^2.3.3",
+    "node-fetch": "^3.3.0",
+    "ts-node": "^10.9.1"
   },
   "devDependencies": {
     "eslint": "^8.26.0",
     "eslint-config-prettier": "^2.9.0",
     "eslint-plugin-prettier": "^2.6.2",
     "prettier": "^1.13.7",
-    "prisma": "^4.6.1"
+    "prisma": "^4.6.1",
+    "typescript": "^4.9.3"
   }
 }
