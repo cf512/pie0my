@@ -20,7 +20,30 @@
 
 </head>
 
-<body>
+<div class="container">
+  {{!-- Navbar --}}
+  <nav class="navbar navbar-expand-lg">
+    <div class="container-fluid">
+      <a href="/" class="navbar-brand mb-0 h1"><h2>🥧 Who's For Pie? 🥧</h2></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+          <li class="nav-item navpadding">
+            <a class="nav-link" href="/wheel">Spin the Wheel</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://github.com/cf512/pie0my" target="_blank"><i class="fa fa-github fa-xl githubIcon" aria-hidden="true"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <div class="pie-nav-border"></div>
+</div>
+
+<body>  
   {{{body}}}
 </body>
 
