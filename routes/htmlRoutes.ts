@@ -10,6 +10,12 @@ module.exports = function(app: any) {
         });
     });
 
+    app.get("/wheel", function(req: any, res: any) {
+        res.render("wheel", {
+            msg: "Wheel!"
+        });
+    })
+
     // Render 404 page for any unmatched routes
     app.get("*", function(req: any, res: any) {
         res.render("404");

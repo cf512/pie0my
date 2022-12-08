@@ -29,6 +29,17 @@ h1, h2 {
   text-align: center;
 }
 
+#p-centered-click-to-spin{
+  color:darkslategray;
+  font-weight: bold;
+  text-align:center;
+}
+
+#p-centered-back-home{
+  margin-top: 20px;
+  text-align:center
+}
+
 .pie-nav-border {
   border-bottom: darkgray 1px solid;
 }
