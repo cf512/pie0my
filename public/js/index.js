@@ -35,3 +35,21 @@ $(".pie-refill").on("click", function(){
         location.reload();
     });
 });
+
+$("#pie-wheel").on("click", function(event){
+    event.preventDefault();
+
+    const element = document.getElementById("pie-wheel");
+
+    let deg = 0;
+    let id = setInterval(frame, 10);
+    
+    function frame() {
+        if (deg === 360) {
+            clearInterval(id);
+        } else {
+            deg++;
+            element.style.transform = `rotate(${deg}deg)`;
+        }
+    }
+});
