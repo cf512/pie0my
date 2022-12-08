@@ -53,3 +53,9 @@ h1, h2 {
 .pie-table {
   text-align: center;
 }
+
+#pie-wheel {
+  text-align: center;
+  cursor:pointer;
+  width: 100%;
+}
