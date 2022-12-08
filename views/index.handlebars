@@ -1,16 +1,5 @@
 <div class="container">
 
-  {{!-- Navbar --}}
-  <nav class="navbar navbar-light">
-    <a href="/" class="navbar-brand mb-0 h1"><h2>🥧 Who's For Pie? 🥧</h2></a>
-    <ul class="nav text-right">
-      <li class="nav-item icon-padding">
-        <a href="https://github.com/cf512/pie0my" target="_blank"><i class="fa fa-github fa-xl githubIcon" aria-hidden="true"></i></a>
-      </li>
-    </ul>
-  </nav>
-  <div class="pie-nav-border"></div>
-
   {{!-- Jumbotron --}}
   <div class="container main">
     <div>
@@ -21,7 +10,7 @@
               <td id="pie-d" hidden>{{this.id}}</td>
               <td>{{this.name}}<br><img src="{{domainUrl}}{{this.imageUrl}}"></img></td>
               <tr>
-                <td><button type="button" class="btn btn-sm btn-info pie-eat">Click to eat this {{this.name}} Pie</button></td>
+                <td><button type="button" class="btn btn-sm btn-info pie-eat">Click to pretend eat this {{this.name}} Pie</button></td>
               </tr>
             </tr>
           {{/each}}
@@ -40,6 +29,3 @@
 {{/if}}
 
 </div>
-
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>

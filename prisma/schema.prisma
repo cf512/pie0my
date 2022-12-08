@@ -7,7 +7,6 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-// Define the `User` table in the database
 model Pie {
   id    Int     @default(autoincrement()) @id
   name  String?

@@ -29,6 +29,21 @@ h1, h2 {
   text-align: center;
 }
 
+.navpadding{
+  padding-right:20px;
+}
+
+#p-centered-click-to-spin{
+  color:darkslategray;
+  font-weight: bold;
+  text-align:center;
+}
+
+#p-centered-back-home{
+  margin-top: 20px;
+  text-align:center
+}
+
 .pie-nav-border {
   border-bottom: darkgray 1px solid;
 }
@@ -41,4 +56,10 @@ h1, h2 {
 
 .pie-table {
   text-align: center;
+}
+
+#pie-wheel {
+  text-align: center;
+  cursor:pointer;
+  width: 100%;
 }
