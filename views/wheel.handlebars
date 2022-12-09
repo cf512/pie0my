@@ -1,15 +1,33 @@
-<div class="container">
-  <div class="row">
-    <div class="col-8 offset-2">
-      <div class="card mt-4">
-        <div class="card-body">
-          <p id="p-centered-click-to-spin">Click to Spin</p>
-          <img id="pie-wheel" src="/images/pie.png">
-          <p id="p-centered-back-home">
-            <a href="/">← Back To Home</a>
-          </p>
-        </div>
+<div class="d-flex p-4 justify-content-center">
+  <div class="card">
+    <div class="card-body">
+      <p id="p-centered-click-to-spin">Click to Spin</p>
+
+      <img class="spin-wheel apple-pie pie-wheel" id="pie1" src="/images/pie-wheel-apple.png">
+      <div hidden class="pie-space">&nbsp;</div>
+      <img class="spin-wheel cherry-pie pie-wheel" id="pie2" src="/images/pie-wheel-cherry.png" hidden>
+
+      <div>
+        <p id="p-centered-margin-top">Spin Count: <span id="howMany">--</span></p>
       </div>
+
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-info spin-wheel" value="1">1 Spin</button>&nbsp;
+        <button type="button" class="btn btn-info spin-wheel" value="2">2 Spins</button>&nbsp;
+        <button type="button" class="btn btn-info spin-wheel" value="3">3 Spins</button>
+      </div>
+      <br>
+
+      <div class="d-flex justify-content-center">
+        <button type="button" class="btn btn-danger" id="toggle-cherry-pie">Cherry</button>&nbsp;
+        <button type="button" class="btn btn-success" id="toggle-apple-pie">Apple</button>&nbsp;
+        <button type="button" class="btn btn-warning" id="toggle-both-pies">Both</button>
+      </div>
+
+      <p id="p-centered-margin-top">
+        <a href="/">← Back To Home</a>
+      </p>
+
     </div>
   </div>
 </div>

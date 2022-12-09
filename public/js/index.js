@@ -36,20 +36,51 @@ $(".pie-refill").on("click", function(){
     });
 });
 
-$("#pie-wheel").on("click", function(event){
+$(".spin-wheel").on("click", function (event) {
     event.preventDefault();
-
-    const element = document.getElementById("pie-wheel");
-
     let deg = 0;
-    let id = setInterval(frame, 10);
-    
-    function frame() {
-        if (deg === 360) {
-            clearInterval(id);
+
+    $("#howMany").html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>");
+
+    var buttonSpinCount = $(this).attr("value");
+    var rotations = buttonSpinCount ? buttonSpinCount : 1;
+
+    const element = document.getElementById("pie1");
+    const element2 = document.getElementById("pie2");
+    let wheel = setInterval(spin, 10);
+
+    function spin() {
+        if (deg === (360 * rotations)) {
+            clearInterval(wheel);
         } else {
             deg++;
+            if (deg % 360 === 0){
+                var rotationCount = deg / 360;
+                $("#howMany").html(rotationCount);
+            }
             element.style.transform = `rotate(${deg}deg)`;
+            element2.style.transform = `rotate(${deg}deg)`;
         }
     }
+});
+
+$("#toggle-apple-pie").on("click", function (event){
+    event.preventDefault();
+    $(".pie-space").attr("hidden", true);
+    $(".cherry-pie").attr("hidden", true);
+    $(".apple-pie").attr("hidden", false);
+});
+
+$("#toggle-both-pies").on("click", function (event){
+    event.preventDefault();
+    $(".apple-pie").attr("hidden", false);
+    $(".pie-space").attr("hidden", false);
+    $(".cherry-pie").attr("hidden", false);
+});
+
+$("#toggle-cherry-pie").on("click", function (event){
+    event.preventDefault();
+    $(".pie-space").attr("hidden", true);
+    $(".apple-pie").attr("hidden", true);
+    $(".cherry-pie").attr("hidden", false);
 });
