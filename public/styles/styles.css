@@ -7,9 +7,9 @@ body {
 }
 
 .footer {
-  text-align: center;
   margin-top:10px;
   margin-bottom:20px;
+  text-align: center;
 }
 
 .githubIcon {
@@ -39,9 +39,9 @@ h1, h2 {
   text-align:center;
 }
 
-#p-centered-back-home{
+#p-centered-margin-top{
   margin-top: 20px;
-  text-align:center
+  text-align:center;
 }
 
 .pie-nav-border {
@@ -49,17 +49,17 @@ h1, h2 {
 }
 
 .pie-refill {
-  text-align: center;
   border-bottom: 1px darkgray solid;
   padding-bottom: 15px;
+  text-align: center;
 }
 
 .pie-table {
   text-align: center;
 }
 
-#pie-wheel {
+.pie-wheel {
+  cursor: pointer;
   text-align: center;
-  cursor:pointer;
   width: 100%;
 }
