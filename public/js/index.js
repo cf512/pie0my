@@ -40,6 +40,8 @@ $(".spin-wheel").on("click", function (event) {
     event.preventDefault();
     let deg = 0;
 
+    $(".spin-wheel").attr("disabled", true);
+
     $("#howMany").html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>");
 
     var buttonSpinCount = $(this).attr("value");
@@ -52,6 +54,7 @@ $(".spin-wheel").on("click", function (event) {
     function spin() {
         if (deg === (360 * rotations)) {
             clearInterval(wheel);
+            $(".spin-wheel").removeAttr("disabled");
         } else {
             deg++;
             if (deg % 360 === 0){
