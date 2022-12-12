@@ -21,7 +21,7 @@ var API = {
 
 $(".pie-eat").on("click", function(){
     var obj = {
-        id: $("#pie-d").html()
+        id: $(this).val()
     };
     API.deletePie(obj.id).then(function(){
         console.log("deleted");
