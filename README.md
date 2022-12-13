@@ -13,3 +13,9 @@ A super simple pie-eating webapp built with:
 * Bootstrap
 * FontAwesome
 * jQuery
+
+---
+
+Features:
+
+* a pie wheel that you can spin
