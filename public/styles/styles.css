@@ -54,6 +54,10 @@ h1, h2 {
   text-align: center;
 }
 
+.pie-space{
+  margin-top: 10px
+}
+
 .pie-table {
   text-align: center;
 }
@@ -61,7 +65,7 @@ h1, h2 {
 .pie-wheel {
   cursor: pointer;
   text-align: center;
-  width: 350px;
+  width: 100%;
 }
 
 .spin-rotation-count-area{
