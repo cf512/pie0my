@@ -41,8 +41,9 @@ $(".spin-wheel").on("click", function (event) {
     let deg = 0;
 
     $(".spin-wheel").attr("disabled", true);
+    $("#spin-count-status").empty();
 
-    $("#howMany").html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>");
+    $("#spin-count").html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>");
 
     var buttonSpinCount = $(this).attr("value");
     var rotations = buttonSpinCount ? buttonSpinCount : 1;
@@ -55,12 +56,17 @@ $(".spin-wheel").on("click", function (event) {
         if (deg === (360 * rotations)) {
             clearInterval(wheel);
             $(".spin-wheel").removeAttr("disabled");
+            $("#spin-count-status").html("✅");
         } else {
             deg++;
+            var degPct = ((deg / (360 * rotations)) * 100).toFixed(0);
             if (deg % 360 === 0){
                 var rotationCount = deg / 360;
-                $("#howMany").html(rotationCount);
+                $("#spin-count").html(rotationCount);
+                $("#spin-count-status").html("<div class='spinner-border spinner-border-sm' role='status'><span class='visually-hidden'>Loading...</span></div>");
             }
+            $("#rotation-count-degrees").html(deg);
+            $("#rotation-count-percentage").html(degPct);
             element.style.transform = `rotate(${deg}deg)`;
             element2.style.transform = `rotate(${deg}deg)`;
         }
